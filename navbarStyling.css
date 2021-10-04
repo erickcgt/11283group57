@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to right,rgb(14, 110, 64) 0%,rgb(39, 156, 64) 100%);
+    /*background-color: rgb(14, 110, 64);*/
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 13.5vh;
+  }
+
+.logo_image{
+    width: 20vw;
+    height: 7.5vh;
+}
+
+li, a {
+    text-decoration: none;
+    color: rgba(245, 245, 245, 0.815);
+    font-size: 17.5px;
+    letter-spacing: 0.1rem;
+}
+
+.nav_bar_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.75% 5%;
+    background: rgb(24, 90, 56);
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.nav_bar_items{
+    list-style: none;
+    margin-left: 28%;
+    margin-top: 1.5%;
+}
+
+.nav_bar_items li{
+    display: inline-block;
+    padding: 0px 80px;
+}
+
+.nav_bar_items li a{
+    transition: all 0.3s ease 0s;
+    position: fixed;
+
+}
+
+.nav_bar_items li a:hover{
+    opacity:0.9;
+    font-size: 20px;
+    color:rgb(231, 231, 231);
+}
+
+.a3 {
+    padding-left: 25px;
+}
