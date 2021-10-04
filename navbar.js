@@ -32,7 +32,7 @@ function AddNavBar() {
 
     a1.textContent = "Heatmap"; 
     //Link that this button will take you to but we don't have that page yet so we will do it later on.  
-    a1.setAttribute('href', "http://www.Google.com");
+    a1.setAttribute('href', "heatmap.html");
     li1.appendChild(a1);
     navUList.appendChild(li1);
     nav.appendChild(navUList);
