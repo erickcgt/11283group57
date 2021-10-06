@@ -66,8 +66,20 @@ function AddNavBar() {
     navUList.appendChild(li3);
     nav.appendChild(navUList);
     mainDiv.appendChild(nav);
+    
+    //=======================================================================
+    //This section is to create the third button link that will be in the navbar (it is called Heatmap)
+    let li4 = document.createElement("li");
+    let a4 = document.createElement("a");
 
+    a4.textContent = "Sources"; 
+    a4.classList.add("a4")
+    //Link that this button will take you to but we don't have that page yet so we will do it later on.   
+    a4.setAttribute('href', "http://www.Google.com");
+    li4.appendChild(a4);
+    navUList.appendChild(li4);
+    nav.appendChild(navUList);
+    mainDiv.appendChild(nav);
 
-    console.log("hello fren")
   }
 
