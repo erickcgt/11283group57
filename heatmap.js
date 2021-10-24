@@ -3,7 +3,7 @@ function heatmap(){
   // Create the script tag, set the appropriate attributes, add apiKey
   var script = document.createElement('script');
   const apiKey = "AIzaSyBitaA2w27vZXgPIR7mb3SHaYm0SB2GS1M"
-  script.src = 'https://maps.googleapis.com/maps/api/js?key='+apiKey+'&callback=initMap';
+  script.src = 'https://maps.googleapis.com/maps/api/js?key='+apiKey+'&libraries=visualization&callback=initMap';
   script.async = true;
 
   // Attach your callback function to the `window` object
@@ -37,30 +37,37 @@ function LoadHeatmap(){
     [
       {
         "name": "Miami", 
-        "coordinates": (25.7617, 80.2)
+        "coordinates": [25.7617, -80.2]
       },
       {
         "name": "Gainesville", 
-        "coordinates": (29.65, 82.32)
+        "coordinates": [29.65, -82.32]
       }
     ]
   }
+  heatMapData = []
   counties = new Map()
   for (i in json.counties){
     countyObj = new County(json.counties[i])
     counties.set(countyObj.name, countyObj)
+    datapoint = new google.maps.LatLng(countyObj.coordinates[0], countyObj.coordinates[1])
+    heatMapData.push(datapoint)
   }
-  console.log(counties)
-  //heatmap
   /*
-  heatMapData = [
-    {}
-  ]
+  new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "Hello World!",
+  });
+  */
+  console.log(counties)
+  console.log(heatMapData)
+  //heatmap
   var heatmap = new google.maps.visualization.HeatmapLayer({
     data: heatMapData
   });
   heatmap.setMap(map);
-  */
+  
   //append to main
   mainDiv.appendChild(mapDiv)
   console.log("heatmap() called")
