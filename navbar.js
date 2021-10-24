@@ -83,6 +83,5 @@ function AddNavBar() {
     mainDiv.appendChild(nav);
 
 
-    console.log("hello")
   }
 
