@@ -17,11 +17,20 @@ function RenderEnergyConservationPage(){
     pagePurpose.innerHTML += 'aid in reducing global warming.';
     mainDivE.appendChild(pagePurpose);
 
-    
-    //let logoImage = document.createElement("img");
-    //logoImage.classList.add("logo_image")
-    //logoImage.src = "files/Header_no_background.png";
-    //navBarHeader.appendChild(logoImage);
+    //Code to add image onto our page
+    let conservationImage = document.createElement("img");
+    conservationImage.classList.add("con_image")
+    conservationImage.src = "files/ConservationTips_ClearerText.png";
+    mainDivE.appendChild(conservationImage);
+
+    //Code where we can add tips for people to save energy
+    let conservationTipsDiv = document.createElement("div")
+    conservationTipsDiv.classList.add("consTipsDiv");
+
+    conservationTipsDiv.innerHTML += 'The U.S. Department of Energy estimates that the typical household can save 25% on utility bills<br>';
+    conservationTipsDiv.innerHTML += 'with energy efficiency measures, which amounts to over $2,200 annually. <br>';
+    conservationTipsDiv.innerHTML += "Aside from tips provided in the image above, here are a few more tips for you to save energy: <br>";
+    mainDivE.appendChild(conservationTipsDiv);
 }
 
 navbar()
