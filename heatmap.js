@@ -23,13 +23,13 @@ function LoadHeatmap(){
   mapDiv = document.createElement('div')
   mapDiv.id = 'map'
   mapDiv.style.height = "400px"
-  mapDiv.style.width = "400px"
+  mapDiv.style.width = "550px"
   mapDiv.style.position = "relative"
   mapDiv.style.margin = "0 auto"
   mapDiv.style.top = "80px"
   map = new google.maps.Map(mapDiv, {
-  center: {lat: 27.6648, lng: -82.9},
-  zoom: 6
+  center: {lat: 28.1, lng: -82.9},
+  zoom: 6.1
   });
   //placeholder data
   json = {
@@ -37,11 +37,11 @@ function LoadHeatmap(){
     [
       {
         "name": "Miami", 
-        "coordinates": "(25.7617, 80.2)"
+        "coordinates": (25.7617, 80.2)
       },
       {
         "name": "Gainesville", 
-        "coordinates": "(29.65, 82.32)"
+        "coordinates": (29.65, 82.32)
       }
     ]
   }
