@@ -32,7 +32,7 @@ function AddNavBar() {
 
     a1.textContent = "Heatmap"; 
     //Link that this button will take you to but we don't have that page yet so we will do it later on.  
-    a1.setAttribute('href', "heatmap.html");
+    a1.setAttribute('href', "main.html");
     li1.appendChild(a1);
     navUList.appendChild(li1);
     nav.appendChild(navUList);
@@ -46,7 +46,7 @@ function AddNavBar() {
 
     a2.textContent = "Energy Data"; 
     //Link that this button will take you to but we don't have that page yet so we will do it later on.  
-    a2.setAttribute('href', "http://www.Google.com");
+    a2.setAttribute('href', "energyData.html");
     li2.appendChild(a2);
     navUList.appendChild(li2);
     nav.appendChild(navUList);
@@ -61,12 +61,13 @@ function AddNavBar() {
     a3.textContent = "Energy Conservation"; 
     a3.classList.add("a3")
     //Link that this button will take you to but we don't have that page yet so we will do it later on.   
-    a3.setAttribute('href', "http://www.Google.com");
+    a3.setAttribute('href', "energyConservation.html");
     li3.appendChild(a3);
     navUList.appendChild(li3);
     nav.appendChild(navUList);
     mainDiv.appendChild(nav);
-    
+
+
     //=======================================================================
     //This section is to create the third button link that will be in the navbar (it is called Heatmap)
     let li4 = document.createElement("li");
@@ -75,11 +76,13 @@ function AddNavBar() {
     a4.textContent = "Sources"; 
     a4.classList.add("a4")
     //Link that this button will take you to but we don't have that page yet so we will do it later on.   
-    a4.setAttribute('href', "http://www.Google.com");
+    a4.setAttribute('href', "sources.html");
     li4.appendChild(a4);
     navUList.appendChild(li4);
     nav.appendChild(navUList);
     mainDiv.appendChild(nav);
 
+
+    console.log("hello")
   }
 
