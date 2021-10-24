@@ -37,7 +37,6 @@ function getFile(path, response, mimeType)
         }
         else if (error.code === 'ENOENT') //404
         {
-            console.log(path);
             response.writeHead(404);
             response.write("404: Page not found.");
             response.end();
@@ -51,7 +50,7 @@ function getFile(path, response, mimeType)
 
 function requestHandler(request, response)
 {
-    var fileName = path.basename(request.url) || 'heatmap.html';
+    var fileName = request.url;
     var serverFolder = __dirname + '/';
     var extension = path.extname(fileName);
     getFile((serverFolder + fileName), response, fileExtensions[extension]);
