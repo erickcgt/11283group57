@@ -22,13 +22,12 @@ function LoadHeatmap(){
   mainDiv = document.getElementById('main')
   mapDiv = document.createElement('div')
   mapDiv.id = 'map'
-  mapDiv.style.height = "550px"
-  mapDiv.style.width = "750px"
+  mapDiv.style.height = "75vh"
+  mapDiv.style.width = "55vw"
   mapDiv.style.position = "relative"
   mapDiv.style.margin = "0 auto"
   mapDiv.style.top = "80px"
   mapDiv.style.position = "relative"
-  mapDiv.style.zIndex = "-1"
   map = new google.maps.Map(mapDiv, {
   center: {lat: 28.1, lng: -84.2},
   zoom: 6.7
