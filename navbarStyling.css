@@ -9,6 +9,7 @@
 body {
     background: linear-gradient(to right,rgb(14, 110, 64) 0%,rgb(39, 156, 64) 100%);
     /*background-color: rgb(14, 110, 64);*/
+    
 }
 
 html {
@@ -37,12 +38,15 @@ li, a {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1;
 }
 
 .nav_bar_items{
     list-style: none;
     margin-left: 28%;
     margin-top: 1.5%;
+    position: relative;
+    z-index: 1;
 }
 
 .nav_bar_items li{
