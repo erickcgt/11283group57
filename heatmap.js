@@ -27,6 +27,8 @@ function LoadHeatmap(){
   mapDiv.style.position = "relative"
   mapDiv.style.margin = "0 auto"
   mapDiv.style.top = "80px"
+  mapDiv.style.position = "relative"
+  mapDiv.style.zIndex = "-1"
   map = new google.maps.Map(mapDiv, {
   center: {lat: 28.1, lng: -84.2},
   zoom: 6.7
