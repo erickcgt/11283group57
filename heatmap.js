@@ -53,7 +53,7 @@ function LoadHeatmap(){
       },
       {
         "name": "Brevard County", 
-        "coordinates": "28.26, -80.72",
+        "coordinates": "28.26, -80.7214",
         "population": "601942"
       },
       {
