@@ -50,6 +50,26 @@ function LoadHeatmap(){
         "name": "Orange County", 
         "coordinates": "28.48, -81.25",
         "population": "1145956"
+      },
+      {
+        "name": "Brevard County", 
+        "coordinates": "28.26, -80.72",
+        "population": "601942"
+      },
+      {
+        "name": "Broward County", 
+        "coordinates": "26.19, -80.36",
+        "population": "1952778"
+      },
+      {
+        "name": "Manatee County", 
+        "coordinates": "27.47, -82.34",
+        "population": "403253"
+      },
+      {
+        "name": "Bay County", 
+        "coordinates": "30.18, -85.68",
+        "population": "174705"
       }
     ]
   }
