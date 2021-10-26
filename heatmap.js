@@ -50,6 +50,81 @@ function LoadHeatmap(){
         "name": "Orange County", 
         "coordinates": "28.48, -81.25",
         "population": "1145956"
+      },
+      {
+        "name": "Palm Beach County", 
+        "coordinates": "26.65, -80.27",
+        "population": "1496770"
+      },
+      {
+        "name": "Brevard County", 
+        "coordinates": "28.26, -80.7214",
+        "population": "601942"
+      },
+      {
+        "name": "Broward County", 
+        "coordinates": "26.19, -80.36",
+        "population": "1952778"
+      },
+      {
+        "name": "Monroe County", 
+        "coordinates": "24.55, -81.78",
+        "population": "74228"
+      },
+      {
+        "name": "Sarasota County", 
+        "coordinates": "27.19, -82.34",
+        "population": "433742"
+      },
+      {
+        "name": "Manatee County", 
+        "coordinates": "27.47, -82.34",
+        "population": "403253"
+      },
+      {
+        "name": "Bay County", 
+        "coordinates": "30.18, -85.68",
+        "population": "174705"
+      },
+      {
+        "name": "Flagler County", 
+        "coordinates": "29.40, -81.25",
+        "population": "115081"
+      },
+      {
+        "name": "Jackson County", 
+        "coordinates": "30.71, -85.18",
+        "population": "47945"
+      },
+      {
+        "name": "Leon County", 
+        "coordinates": "30.49, -84.18",
+        "population": " 293582"
+      },
+      {
+        "name": "Nassau County", 
+        "coordinates": "30.59, -81.82",
+        "population": "88625"
+      },
+      {
+        "name": "Okeechobee County", 
+        "coordinates": "27.34, -80.89",
+        "population": "42168"
+      },
+      {
+        "name": "Osceola County", 
+        "coordinates": "28.10, -81.07",
+        "population": "375751"
+      },
+      {
+        "name": "Polk County", 
+        "coordinates": "27.86, -81.69",
+        "population": "724777"
+      },
+      {
+        "name": "Santa Rosa County", 
+        "coordinates": "30.76, -86.98",
+        "population": "184313"
       }
     ]
   }
