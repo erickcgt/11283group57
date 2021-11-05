@@ -28,6 +28,12 @@ function RenderSourcesPage(){
     sources.innerHTML += '<br>';
     sources.innerHTML += '7. https://www.bhhclv.com/7-reasons-to-conserve-energy// <br>';
     sources.innerHTML += '<br>';
+    sources.innerHTML += '8. https://www.poweredtemplate.com <br>';
+    sources.innerHTML += '<br>';
+    sources.innerHTML += '9. https://www.slidescarnival.com <br>';
+    sources.innerHTML += '<br>';
+    sources.innerHTML += '10. https://www.ijirae.com/volumes/Vol2/iss4/34.APAE10052.pdf <br>';
+    sources.innerHTML += '<br>';
     mainDivS.appendChild(sources);
 }
 
