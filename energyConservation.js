@@ -33,7 +33,13 @@ function RenderEnergyConservationPage(){
     let energyBenefits = document.createElement("img");
     energyBenefits.classList.add("con_image")
     energyBenefits.src = "files/energyConBenefits.png";
-    mainDivE.appendChild(energyBenefits);    
+    mainDivE.appendChild(energyBenefits);  
+    
+    //Code to add image onto our page
+    let conservationImportance = document.createElement("img");
+    conservationImportance.classList.add("con_image")
+    conservationImportance.src = "files/conservationImportance.png";
+    mainDivE.appendChild(conservationImportance);  
 
     //Code to add image onto our page
     let savingMoneyStatImage = document.createElement("img");
