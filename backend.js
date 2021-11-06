@@ -53,6 +53,11 @@ function requestHandler(request, response)
     var fileName = request.url;
     var serverFolder = __dirname + '/';
     var extension = path.extname(fileName);
+    if(extension === '') //reroute to home page
+    {
+        fileName = '/main.html';
+        extension = ".html";
+    }
     getFile((serverFolder + fileName), response, fileExtensions[extension]);
 };
 
