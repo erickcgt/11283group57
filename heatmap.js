@@ -172,7 +172,7 @@ function CreateHeatmap(status){
       currTitle = currObj.title
     } else{
       currObj = productionMap.get(county.name)
-      currWeight = currObj.totalProduction/maxProduction
+      currWeight = currObj.totalProduction/maxProduction + 0.01 //weights cannot be 0 in googlemaps api
       currCoordinates = consumptionMap.get(county.name).coordinates
       currLocation = new google.maps.LatLng(currCoordinates[0], currCoordinates[1])
       currTitle = currObj.title
@@ -223,11 +223,14 @@ class ConsumptionCounty {
     this.consumption = json.consumption;
     this.production = json.production;
     this.population = json.population;
-    //avg people per household = 2.53, avg monthly consumption per household = 893
-    this.consumptionEstimate = Math.trunc(this.population/2.53 * 893).toLocaleString()
-    this.title = this.name + '\n'
-                + 'Consumption: ' + this.consumptionEstimate + ' kWh per month'
-                + '\n' + 'Population: ' + this.population;
+    //avg people per household = 2.53, avg monthly consumption per household = 893, /1000 to convert to mWh from kWh
+    let consumptionEstimate = Math.trunc(this.population/2.53 * 893 * (12 / 1000)).toLocaleString()
+    let population = Number(this.population).toLocaleString()
+    this.title = this.name.toUpperCase() + '\n'
+                + 'Consumption: ' + consumptionEstimate + ' mWh Per Year'
+                + '\n' + 'Population: ' + population;
+    console.log(this.population)
+    console.log(this.population.toLocaleString())
   }
 }
 //ProductionCounty class
@@ -250,6 +253,18 @@ class ProductionCounty {
       if (property === 'totalProduction'){continue;}
       this.totalProduction += this[property]
     }
-    this.title = this.name;
+    this.totalProduction = Math.trunc(this.totalProduction)
+    this.title = this.name.toUpperCase() + '\n' +
+              'Biomass Production: ' + this.biomass.toLocaleString() + ' mWh'+ '\n' +
+              'Coal Production: ' + this.coal.toLocaleString() + ' mWh' + '\n' +
+              'HydroElectric Production: ' + this.hydroelectric.toLocaleString() + ' mWh'+ '\n' +
+              'Natural Gas Production: ' + this.naturalgas.toLocaleString() + ' mWh'+ '\n' +
+              'Nuclear Production: ' + this.nuclear.toLocaleString() + ' mWh'+ '\n' +
+              'CHP Production: ' + this.chp.toLocaleString() + ' mWh' + '\n' +
+              'Petroleum Production: ' + this.petroleum.toLocaleString() + ' mWh'+ '\n' +
+              'Solar Production: ' + this.solar.toLocaleString() + ' mWh'+ '\n' +
+              'Wind Production: ' + this.wind.toLocaleString() + ' mWh'+ '\n' +
+              '=Total Production (Net Summer Capacity): ' + this.totalProduction.toLocaleString() + ' mWh';
+    ;
   }
 }
