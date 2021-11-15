@@ -1,4 +1,4 @@
-[
+consumptionData = [
     {
       "name": "Miami-Dade County",
       "population": "2721110",
@@ -208,7 +208,7 @@
       "population": "121073",
       "coordinates": "29.41, -81.25",
       "area":"571"
-       
+
     },
     {
       "name": "Highlands County",
