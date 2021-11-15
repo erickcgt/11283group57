@@ -1,3 +1,11 @@
+html,body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden; 
+}
 
 .pagePurposeDiv{
     position: relative;
@@ -43,4 +51,8 @@
     font-size: 17.5px;
     font-weight: 500;
     margin-bottom: 5%;
+}
+
+.spacingDiv{
+    margin-top: 10%;
 }

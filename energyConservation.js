@@ -13,8 +13,8 @@ function RenderEnergyConservationPage(){
 
     //Update the text and add the pagePurpose div to the mainDivE
     pagePurpose.innerHTML += 'This page is dedicated to providing energy conservation tips to <br>';
-    pagePurpose.innerHTML += 'those who want to reduce their energy usage to save money as well as <br>';
-    pagePurpose.innerHTML += 'improve their ecological footprint.';
+    pagePurpose.innerHTML += 'those who want to reduce their energy usage to save money as well <br>';
+    pagePurpose.innerHTML += 'as improve their ecological footprint.';
     mainDivE.appendChild(pagePurpose);
 
     //Code to add image onto our page
@@ -46,6 +46,11 @@ function RenderEnergyConservationPage(){
     savingMoneyStatImage.classList.add("con_image")
     savingMoneyStatImage.src = "files/saveMoneyStatistic.png";
     mainDivE.appendChild(savingMoneyStatImage);
+
+    let spacing = document.createElement("div")
+    spacing.classList.add("spacingDiv");
+
+    mainDivE.appendChild(spacing);
 }
 
 navbar()
