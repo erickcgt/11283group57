@@ -241,9 +241,27 @@ productionData = [
     },
     {
         "name": "Escambia County",
+        "biomass production": "79",
+        "coal production": "924",
+        "hydroelectric production": "0",
+        "natural gas production": "11.7",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "50",
+        "wind production": "0"
     },
     {
         "name": "Leon County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "503.1",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "20",
+        "wind production": "0"
     },
     {
         "name": "St. Johns County",
@@ -259,6 +277,15 @@ productionData = [
     },
     {
         "name": "Alachua County",
+        "biomass production": "102.5",
+        "coal production": "232",
+        "hydroelectric production": "0",
+        "natural gas production": "351.2",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "2.8",
+        "wind production": "0"
     },
     {
         "name": "Clay County",
@@ -274,27 +301,99 @@ productionData = [
     },
     {
         "name": "Okaloosa County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "30",
+        "wind production": "0"
     },
     {
         "name": "Hernando County",
+        "biomass production": "1.6",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "0",
+        "wind production": "0"
     },
     {
         "name": "Charlotte County",
+        "biomass production": "2.8",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "159.4",
+        "wind production": "0"
     },
     {
         "name": "Santa Rosa County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "247.9",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "40",
+        "wind production": "0"
     },
     {
         "name": "Indian River County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "149.8",
+        "wind production": "0"
     },
     {
         "name": "Martin County",
+        "biomass production": "0",
+        "coal production": "330",
+        "hydroelectric production": "0",
+        "natural gas production": "2209",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "74.5",
+        "wind production": "0"
     },
     {
         "name": "Citrus County",
+        "biomass production": "0",
+        "coal production": "1422",
+        "hydroelectric production": "0",
+        "natural gas production": "1610",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "0",
+        "wind production": "0"
     },
     {
         "name": "Bay County",
+        "biomass production": "45.8",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "511",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "32",
+        "solar production": "0",
+        "wind production": "0"
     },
     {
         "name": "Sumter County",
