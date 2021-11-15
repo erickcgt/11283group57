@@ -1,0 +1,9 @@
+.con_image{
+    position: relative;
+    z-index: -1;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 300px;
+    border-style: solid;
+    border-radius: 5px;
+}

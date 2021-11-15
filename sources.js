@@ -34,6 +34,8 @@ function RenderSourcesPage(){
     sources.innerHTML += '<br>';
     sources.innerHTML += '10. https://www.ijirae.com/volumes/Vol2/iss4/34.APAE10052.pdf <br>';
     sources.innerHTML += '<br>';
+    sources.innerHTML += '11. https://www.eia.gov/energyexplained/renewable-sources/ <br>';
+    sources.innerHTML += '<br>';
     mainDivS.appendChild(sources);
 }
 
