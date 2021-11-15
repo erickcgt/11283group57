@@ -1,3 +1,8 @@
+//global variables
+var maxPopulation = 0;
+var maxProduction = 0;
+var consumptionMap;
+var productionMap;
 //heatmap() connects to map api and loads window
 function heatmap(){
   //create toggle button and mouseclick functionality
@@ -11,6 +16,9 @@ function heatmap(){
   // Attach your callback function to the `window` object
   window.initMap = function() {
     // JS API is loaded and available
+    //global variables
+    consumptionMap = mapConsumptionData()
+    productionMap = mapProductionData()
     CreateHeatmap('consumption')
   };
 
@@ -101,6 +109,34 @@ function toggle(){
     CreateHeatmap('consumption')
   }
 }
+//create map<county_name, consumption_county_obj> from consumption JSON
+function mapConsumptionData(){
+  consumptionMap = new Map()
+  for (county of consumptionData){
+    countyObj = new ConsumptionCounty(county)
+    consumptionMap.set(countyObj.name, countyObj)
+    if (countyObj.population > maxPopulation) {
+      maxPopulation = countyObj.population
+    }
+  }
+  //return map to store in global variable
+  return consumptionMap
+}
+//create map<county_name, production_county_obj> from production JSON
+function mapProductionData(){
+  productionMap = new Map()
+  for (county of productionData){
+    if (Object.keys(county).length == 10){
+      countyObj = new ProductionCounty(county)
+      productionMap.set(countyObj.name, countyObj)
+      if (countyObj.totalProduction > maxProduction) {
+        maxProduction = countyObj.totalProduction
+      }
+    }
+  }
+  //return map to store in global variable
+  return productionMap
+}
 //CreateHeatmap()
 function CreateHeatmap(status){
   console.log('CreateHeatmap() called')
@@ -124,18 +160,28 @@ function CreateHeatmap(status){
   });
   //POPULATING MAP WINDOW
   heatMapData = []
-  counties = new Map()
-  for (county of consumptionData){
+  countyJSON = status === 'consumption' ? consumptionMap.values() : productionMap.values();
+  for (county of countyJSON){
     //heatmap data
-    countyObj = new County(county)
-    currLocation = new google.maps.LatLng(countyObj.coordinates[0], countyObj.coordinates[1])
-    currWeight = countyObj.population/2700794
-    currRadius = countyObj.area
+    var currObj
+    if (status === 'consumption'){
+      currObj = consumptionMap.get(county.name)
+      currWeight = currObj.population/maxPopulation
+      currCoordinates = currObj.coordinates
+      currLocation = new google.maps.LatLng(currCoordinates[0], currCoordinates[1])
+      currTitle = currObj.title
+    } else{
+      currObj = productionMap.get(county.name)
+      currWeight = currObj.totalProduction/maxProduction
+      currCoordinates = consumptionMap.get(county.name).coordinates
+      currLocation = new google.maps.LatLng(currCoordinates[0], currCoordinates[1])
+      currTitle = currObj.title
+    }
     dataPoint = {location: currLocation, weight: currWeight}
     heatMapData.push(dataPoint)
     //marker data
     var markerColor
-    if (status == 'consumption'){
+    if (status === 'consumption'){
       markerColor = 'red'
     }
     else{
@@ -144,7 +190,7 @@ function CreateHeatmap(status){
     marker = new google.maps.Marker({
       position: currLocation,
       map,
-      title: countyObj.name,
+      title: currTitle,
     });
     marker.setIcon({
         path: google.maps.SymbolPath.CIRCLE,
@@ -153,8 +199,6 @@ function CreateHeatmap(status){
         fillOpacity: 1.0,
         strokeWeight: 3
     })
-    //store in hashmap
-    counties.set(countyObj.name, countyObj)
   }
   //heatmap
   var heatmap = new google.maps.visualization.HeatmapLayer({
@@ -168,27 +212,44 @@ function CreateHeatmap(status){
   console.log("heatmap() called")
 }
 
-//County Class
-class County {
+//ConsumptionCounty Class
+class ConsumptionCounty {
   //constructor
   constructor(json) {
     this.name = json.name;
     let coordinatesArr = json.coordinates.split(", ")
     this.coordinates = [parseFloat(coordinatesArr[0]), parseFloat(coordinatesArr[1])]
-    this.radius = calculateRadius(json.squareft)
     this.population = parseInt(json.population)
     this.consumption = json.consumption;
     this.production = json.production;
     this.population = json.population;
-    //to do: add other relevant data
-  }
-  setMarker(marker){
-    this.marker = marker
+    //avg people per household = 2.53, avg monthly consumption per household = 893
+    this.consumptionEstimate = Math.trunc(this.population/2.53 * 893).toLocaleString()
+    this.title = this.name + '\n'
+                + 'Consumption: ' + this.consumptionEstimate + ' kWh per month'
+                + '\n' + 'Population: ' + this.population;
   }
 }
-//calculate heatmap node radius from square feet of county
-function calculateRadius(squareft){
-  //to do: function body
-  squareft = parseInt(squareft)
-  return 5
+//ProductionCounty class
+class ProductionCounty {
+  //constructor
+  constructor(json) {
+    this.name = json['name'];
+    this.biomass = parseFloat(json['biomass production'])
+    this.coal = parseFloat(json['coal production'])
+    this.hydroelectric = parseFloat(json['hydroelectric production'])
+    this.naturalgas = parseFloat(json['natural gas production'])
+    this.nuclear = parseFloat(json['nuclear production'])
+    this.chp = parseFloat(json['chp production'])
+    this.petroleum = parseFloat(json['petroleum production'])
+    this.solar = parseFloat(json['solar production'])
+    this.wind = parseFloat(json['wind production'])
+    this.totalProduction = 0.0
+    for (var property in this){
+      if (property === 'name'){continue;}
+      if (property === 'totalProduction'){continue;}
+      this.totalProduction += this[property]
+    }
+    this.title = this.name;
+  }
 }
