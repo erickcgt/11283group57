@@ -32,7 +32,7 @@ function RenderEnergyDataPage(){
     mainDivE.appendChild(floridaStatus);
 
     let monetary = document.createElement("div")
-    monetary.classList.add("monetaryDiv");
+    monetary.classList.add("paragraphStyling");
 
     //Update the text and add the pagePurpose div to the mainDivE
     monetary.innerHTML += 'The total energy consumption in Florida is about 92,947,861 mWh per year. <br>';
@@ -42,6 +42,15 @@ function RenderEnergyDataPage(){
     monetary.innerHTML += 'consumed in a year in Florida is $9,350,554,816.60 and the monetary value of <br>';
     monetary.innerHTML += 'the energy produced in a year in Florida is $25,233,276,579.40 <br>';
     mainDivE.appendChild(monetary);
+
+    let plantLocations = document.createElement("div")
+    plantLocations.classList.add("paragraphStyling");
+
+    //Update the text and add the pagePurpose div to the mainDivE
+    plantLocations.innerHTML += 'There are three locations which seem to be the best to add some renewable <br>';
+    plantLocations.innerHTML += 'enery plants.  <br>';
+
+    mainDivE.appendChild(plantLocations);
 }
 
 navbar()
