@@ -43,14 +43,15 @@ function RenderEnergyDataPage(){
     monetary.innerHTML += 'the energy produced in a year in Florida is $25,233,276,579.40 <br>';
     mainDivE.appendChild(monetary);
 
-    let plantLocations = document.createElement("div")
-    plantLocations.classList.add("paragraphStyling");
+    let pieChart = document.createElement("img");
+    pieChart.classList.add("con_image")
+    pieChart.src = "files/PieChart.png";
+    mainDivE.appendChild(pieChart);
 
-    //Update the text and add the pagePurpose div to the mainDivE
-    plantLocations.innerHTML += 'There are three locations which seem to be the best to add some renewable <br>';
-    plantLocations.innerHTML += 'enery plants.  <br>';
+    let spacing = document.createElement("div")
+    spacing.classList.add("spacingDiv");
 
-    mainDivE.appendChild(plantLocations);
+    mainDivE.appendChild(spacing);
 }
 
 navbar()

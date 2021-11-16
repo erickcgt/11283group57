@@ -49,3 +49,7 @@ html,body
     text-align: center;
     font-size: 20px;
 }
+
+.spacingDiv{
+    margin-top: 10%;
+}
