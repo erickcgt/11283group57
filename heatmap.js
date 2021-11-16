@@ -3,6 +3,18 @@ var maxPopulation = 0;
 var maxProduction = 0;
 var consumptionMap;
 var productionMap;
+var stateConsumption = 0;
+var stateProduction = 0;
+//global variables: production by source
+var stateBiomass = 0;
+var stateCoal = 0;
+var stateHydroelectric = 0;
+var stateNaturalgas = 0;
+var stateNuclear = 0;
+var stateCHP = 0;
+var statePetroleum = 0;
+var stateSolar = 0;
+var stateWind = 0;
 //heatmap() connects to map api and loads window
 function heatmap(){
   //create toggle button and mouseclick functionality
@@ -20,6 +32,17 @@ function heatmap(){
     consumptionMap = mapConsumptionData()
     productionMap = mapProductionData()
     CreateHeatmap('consumption')
+    console.log("State Consumption: " + stateConsumption + ' mWh per year')
+    console.log("State Production (Net Summer Capacity): " + stateProduction + ' mWh')
+    console.log('stateBiomass: ' + Math.trunc(stateBiomass))
+    console.log('stateCoal: ' + Math.trunc(stateCoal))
+    console.log('stateHydroelectric: ' + Math.trunc(stateHydroelectric))
+    console.log('stateNaturalgas: ' + Math.trunc(stateNaturalgas))
+    console.log('stateNuclear: ' + Math.trunc(stateNuclear))
+    console.log('stateCHP: ' + Math.trunc(stateCHP))
+    console.log('statePetroleum: ' + Math.trunc(statePetroleum))
+    console.log('stateSolar: ' + Math.trunc(stateSolar))
+    console.log('stateWind: ' + Math.trunc(stateWind))
   };
 
   // Append the 'script' element to 'head'
@@ -41,7 +64,7 @@ function toggleButton(){
   text.id = 'toggleText'
   text.innerHTML = 'Showing Consumption Data'
   //css for toggle button
-  container.style.zIndex = '3'
+  container.style.zIndex = '0'
   container.style.width = '750px'
   container.style.position = 'relative'
   container.style.left = '50%'
@@ -225,12 +248,11 @@ class ConsumptionCounty {
     this.population = json.population;
     //avg people per household = 2.53, avg monthly consumption per household = 893, /1000 to convert to mWh from kWh
     let consumptionEstimate = Math.trunc(this.population/2.53 * 893 * (12 / 1000)).toLocaleString()
+    stateConsumption += Math.trunc(this.population/2.53 * 893 * (12 / 1000))
     let population = Number(this.population).toLocaleString()
     this.title = this.name.toUpperCase() + '\n'
                 + 'Consumption: ' + consumptionEstimate + ' mWh Per Year'
                 + '\n' + 'Population: ' + population;
-    console.log(this.population)
-    console.log(this.population.toLocaleString())
   }
 }
 //ProductionCounty class
@@ -248,12 +270,24 @@ class ProductionCounty {
     this.solar = parseFloat(json['solar production'])
     this.wind = parseFloat(json['wind production'])
     this.totalProduction = 0.0
+    //store totals
+    stateBiomass += this.biomass;
+    stateCoal += this.coal;
+    stateHydroelectric += this.hydroelectric;
+    stateNaturalgas += this.naturalgas;
+    stateNuclear += this.nuclear;
+    stateCHP += this.chp;
+    statePetroleum += this.petroleum;
+    stateSolar += this.solar;
+    stateWind += this.wind;
+    //count Total production
     for (var property in this){
       if (property === 'name'){continue;}
       if (property === 'totalProduction'){continue;}
       this.totalProduction += this[property]
     }
     this.totalProduction = Math.trunc(this.totalProduction)
+    stateProduction += this.totalProduction
     this.title = this.name.toUpperCase() + '\n' +
               'Biomass Production: ' + this.biomass.toLocaleString() + ' mWh'+ '\n' +
               'Coal Production: ' + this.coal.toLocaleString() + ' mWh' + '\n' +
