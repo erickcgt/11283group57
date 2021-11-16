@@ -421,9 +421,27 @@ productionData = [
     },
     {
         "name": "Highlands County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "24",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "24",
+        "solar production": "45",
+        "wind production": "0"
     },
     {
         "name": "Nassau County",
+        "biomass production": "122",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "21.3",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "0",
+        "wind production": "0"
     },
     {
         "name": "Walton County",
@@ -439,9 +457,27 @@ productionData = [
     },
     {
         "name": "Putnam County",
+        "biomass production": "69.7",
+        "coal production": "1309",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "224.3",
+        "wind production": "0"
     },
     {
         "name": "Columbia County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "149.4",
+        "wind production": "0"
     },
     {
         "name": "Monroe County",
@@ -469,15 +505,51 @@ productionData = [
     },
     {
         "name": "Suwannee County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "99",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "50",
+        "solar production": "83.3",
+        "wind production": "0"
     },
     {
         "name": "Hendry County",
+        "biomass production": "44.6",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "149.4",
+        "wind production": "0"
     },
     {
         "name": "Okeechobee County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "1723.1",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "74.5",
+        "wind production": "0"
     },
     {
         "name": "Jackson County",
+        "biomass production": "4.8",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "0",
+        "wind production": "0"
     },
     {
         "name": "Levy County",
@@ -493,12 +565,39 @@ productionData = [
     },
     {
         "name": "DeSoto County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "253.3",
+        "wind production": "0"
     },
     {
         "name": "Wakulla County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "226",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "42",
+        "wind production": "0"
     },
     {
         "name": "Baker County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "74.5",
+        "wind production": "0"
     },
     {
         "name": "Bradford County",
@@ -526,9 +625,27 @@ productionData = [
     },
     {
         "name": "Hardee County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "1847",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "0",
+        "wind production": "0"
     },
     {
         "name": "Taylor County",
+        "biomass production": "43.5",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "5.1",
+        "wind production": "0"
     },
     {
         "name": "Holmes County",
@@ -544,6 +661,15 @@ productionData = [
     },
     {
         "name": "Gilchrist County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "74.9",
+        "wind production": "0"
     },
     {
         "name": "Madison County",
@@ -583,6 +709,15 @@ productionData = [
     },
     {
         "name": "Hamilton County",
+        "biomass production": "0",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "15.9",
+        "petroleum production": "0",
+        "solar production": "74.9",
+        "wind production": "0"
     },
     {
         "name": "Jefferson County",
@@ -646,6 +781,15 @@ productionData = [
     },
     {
         "name": "Liberty County",
+        "biomass production": "13.7",
+        "coal production": "0",
+        "hydroelectric production": "0",
+        "natural gas production": "0",
+        "nuclear production": "0",
+        "chp production": "0",
+        "petroleum production": "0",
+        "solar production": "0",
+        "wind production": "0"
     },
     {
         "name": "Lafayette County",
