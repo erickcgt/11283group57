@@ -39,6 +39,11 @@ function RenderSourcesPage(){
     sources.innerHTML += '12.https://www.eia.gov/state/analysis.php?sid=FL <br>';
     sources.innerHTML += '<br>';
     mainDivS.appendChild(sources);
+
+    let spacing = document.createElement("div")
+    spacing.classList.add("spacingDiv");
+
+    mainDivS.appendChild(spacing);
 }
 
 navbar()
