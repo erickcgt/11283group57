@@ -5,6 +5,16 @@ var consumptionMap;
 var productionMap;
 var stateConsumption = 0;
 var stateProduction = 0;
+//global variables: production by source
+var stateBiomass = 0;
+var stateCoal = 0;
+var stateHydroelectric = 0;
+var stateNaturalgas = 0;
+var stateNuclear = 0;
+var stateCHP = 0;
+var statePetroleum = 0;
+var stateSolar = 0;
+var stateWind = 0;
 //heatmap() connects to map api and loads window
 function heatmap(){
   //create toggle button and mouseclick functionality
@@ -24,6 +34,15 @@ function heatmap(){
     CreateHeatmap('consumption')
     console.log("State Consumption: " + stateConsumption + ' mWh per year')
     console.log("State Production (Net Summer Capacity): " + stateProduction + ' mWh')
+    console.log('stateBiomass: ' + Math.trunc(stateBiomass))
+    console.log('stateCoal: ' + Math.trunc(stateCoal))
+    console.log('stateHydroelectric: ' + Math.trunc(stateHydroelectric))
+    console.log('stateNaturalgas: ' + Math.trunc(stateNaturalgas))
+    console.log('stateNuclear: ' + Math.trunc(stateNuclear))
+    console.log('stateCHP: ' + Math.trunc(stateCHP))
+    console.log('statePetroleum: ' + Math.trunc(statePetroleum))
+    console.log('stateSolar: ' + Math.trunc(stateSolar))
+    console.log('stateWind: ' + Math.trunc(stateWind))
   };
 
   // Append the 'script' element to 'head'
@@ -251,6 +270,17 @@ class ProductionCounty {
     this.solar = parseFloat(json['solar production'])
     this.wind = parseFloat(json['wind production'])
     this.totalProduction = 0.0
+    //store totals
+    stateBiomass += this.biomass;
+    stateCoal += this.coal;
+    stateHydroelectric += this.hydroelectric;
+    stateNaturalgas += this.naturalgas;
+    stateNuclear += this.nuclear;
+    stateCHP += this.chp;
+    statePetroleum += this.petroleum;
+    stateSolar += this.solar;
+    stateWind += this.wind;
+    //count Total production
     for (var property in this){
       if (property === 'name'){continue;}
       if (property === 'totalProduction'){continue;}
